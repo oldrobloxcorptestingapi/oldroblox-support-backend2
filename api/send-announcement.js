@@ -29,14 +29,14 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "noreply@oldrobloxcorpdataconsole.work.gd",
+        user: "no-reply@oldrobloxcorpdataconsole.work.gd",
         pass: process.env.ZOHO_PASS, // must be set in Vercel env vars
       },
     });
 
     // Send email
     await transporter.sendMail({
-      from: "noreply@oldrobloxcorpdataconsole.work.gd",
+      from: "no-reply@oldrobloxcorpdataconsole.work.gd",
       bcc: recipients,
       subject,
       html: `<p>${message}</p>`,
