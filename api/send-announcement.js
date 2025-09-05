@@ -6,45 +6,35 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  if (req.method === "OPTIONS") return res.status(200).end();
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
   try {
     const { recipients, subject, message } = req.body;
-
-    if (!recipients || !subject || !message) {
+    if (!recipients || !subject || !message)
       return res.status(400).json({ error: "Missing fields" });
-    }
 
-    // Zoho SMTP setup
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
       secure: true,
       auth: {
         user: "no-reply@oldrobloxcorpdataconsole.work.gd",
-        pass: process.env.ZOHO_PASS, // Zoho App Password
+        pass: process.env.ZOHO_PASS, // Use Zoho App Password here
       },
     });
 
-    const mailOptions = {
-      from: '"OldrobloxCorp" <no-reply@oldrobloxcorpdataconsole.work.gd>', // Display name
+    await transporter.sendMail({
+      from: '"OldrobloxCorp" <no-reply@oldrobloxcorpdataconsole.work.gd>',
       to: recipients.join(", "),
       subject,
       text: message,
       html: `<p>${message.replace(/\n/g, "<br>")}</p>`,
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
-
-    return res.status(200).json({ success: true });
+    res.status(200).json({ success: true });
   } catch (err) {
-    console.error("Error sending email:", err);
-    return res.status(500).json({ success: false, error: err.message });
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
   }
 }
