@@ -21,27 +21,25 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Missing fields" });
     }
 
-    // Configure Zoho SMTP
+    // Zoho SMTP setup
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
       secure: true,
       auth: {
         user: "no-reply@oldrobloxcorpdataconsole.work.gd",
-        pass: process.env.ZOHO_PASS, // Zoho app password
+        pass: process.env.ZOHO_PASS, // Zoho App Password
       },
     });
 
-    // Prepare email
     const mailOptions = {
-      from: '"OldrobloxCorp" <no-reply@oldrobloxcorpdataconsole.work.gd>',
+      from: '"OldrobloxCorp" <no-reply@oldrobloxcorpdataconsole.work.gd>', // Display name
       to: recipients.join(", "),
       subject,
       text: message,
       html: `<p>${message.replace(/\n/g, "<br>")}</p>`,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
     return res.status(200).json({ success: true });
