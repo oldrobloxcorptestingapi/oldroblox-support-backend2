@@ -1,11 +1,7 @@
 {
-  "name": "oldroblox-support-backend",
+  "name": "oldroblox-announcements-backend",
   "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "start": "vercel dev"
-  },
   "dependencies": {
-    "nodemailer": "^6.9.5"
+    "nodemailer": "^6.9.4"
   }
 }
