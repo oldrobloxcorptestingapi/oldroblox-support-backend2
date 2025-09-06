@@ -1,18 +1,13 @@
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  // Allow CORS
-  res.setHeader("Access-Control-Allow-Origin", "*"); // You can replace "*" with your frontend domain for security
+  // CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Or your frontend domain
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Handle preflight requests
-  if (req.method === "OPTIONS") {
-    res.setHeader("Access-Control-Allow-Origin", "*"); // You can replace "*" with your frontend domain for security
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    return res.status(200).end();
-  }
+  // Handle preflight
+  if (req.method === "OPTIONS") return res.status(200).end();
 
   if (req.method !== "POST") {
     return res.status(405).json({ success: false, error: "Method Not Allowed" });
@@ -31,8 +26,8 @@ export default async function handler(req, res) {
       secure: true,
       auth: {
         user: "no-reply@oldrobloxcorpdataconsole.work.gd",
-        pass: process.env.ZOHO_PASS,
-      },
+        pass: process.env.ZOHO_EMAIL_PASSWORD
+      }
     });
 
     await transporter.sendMail({
@@ -40,7 +35,7 @@ export default async function handler(req, res) {
       to: recipients.join(","),
       subject,
       text: message,
-      html: `<p>${message.replace(/\n/g, "<br>")}</p>`,
+      html: `<p>${message.replace(/\n/g, "<br>")}</p>`
     });
 
     return res.status(200).json({ success: true });
