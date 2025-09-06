@@ -8,6 +8,9 @@ export default async function handler(req, res) {
 
   // Handle preflight requests
   if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*"); // You can replace "*" with your frontend domain for security
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     return res.status(200).end();
   }
 
