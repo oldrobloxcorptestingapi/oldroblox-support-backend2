@@ -2,11 +2,11 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   // CORS headers
-  res.setHeader("Access-Control-Allow-Origin", "*"); // Or your frontend domain
+  res.setHeader("Access-Control-Allow-Origin", "*"); // replace * with your frontend domain for security
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Handle preflight
+  // Handle preflight requests
   if (req.method === "OPTIONS") return res.status(200).end();
 
   if (req.method !== "POST") {
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       secure: true,
       auth: {
         user: "no-reply@oldrobloxcorpdataconsole.work.gd",
-        pass: process.env.ZOHO_EMAIL_PASSWORD
+        pass: process.env.ZOHO_EMAIL_PASSWORD // set this in Vercel Environment Variables
       }
     });
 
