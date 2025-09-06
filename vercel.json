@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/send-announcement.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/send-announcement",
+      "dest": "/api/send-announcement.js",
+      "methods": ["POST", "OPTIONS"]
+    }
+  ],
+  "env": {
+    "ZOHO_PASS": "@zoho_pass"
+  }
+}
