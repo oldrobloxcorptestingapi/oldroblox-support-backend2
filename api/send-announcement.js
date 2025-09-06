@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       secure: true,
       auth: {
         user: "no-reply@oldrobloxcorpdataconsole.work.gd",
-        pass: process.env.ZOHO_EMAIL_PASSWORD // set this in Vercel Environment Variables
+        pass: process.env.ZOHO_PASS // set this in Vercel Environment Variables
       }
     });
 
