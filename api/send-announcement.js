@@ -49,7 +49,7 @@ export default async function handler(req, res) {
       <div style="max-width:700px; margin:auto; background:#fff; border-radius:8px; padding:40px; color:#333; line-height:1.6;">
         
         <!-- Logo -->
-        <div style="text-align:center; margin-bottom:20px;">
+        <div margin-bottom:20px;">
           <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="OldrobloxCorp" style="height:40px;">
         </div>
 
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
         <p>We appreciate your patience and will be responding to you soon.</p>
 
         <p>Sincerely,<br>
-        Admin Team<br>
+        Announcement Team<br>
         OldrobloxCorp</p>
 
         <!-- Footer Logo -->
