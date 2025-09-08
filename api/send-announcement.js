@@ -44,7 +44,14 @@ export default async function handler(req, res) {
       to: recipients.join(","),
       subject,
       text: message,
-      html: `<p>${safeMessage.replace(/\n/g, "<br>")}</p>`
+      html: `<a href="https://oldrobloxcorpdataconsole.work.gd" target="_blank">
+            <img src="https://oldrobloxcorpdataconsole.work.gd/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+          </a>
+          <p>${safeMessage.replace(/\n/g, "<br>")}</p>
+          <p> - OldrobloxCorp<p>
+          <a href="https://oldrobloxcorpdataconsole.work.gd" target="_blank">
+            <img src="https://oldrobloxcorpdataconsole.work.gd/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+          </a>`
     });
 
     return res.status(200).json({ success: true });
