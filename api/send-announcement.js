@@ -61,15 +61,13 @@ export default async function handler(req, res) {
         <p>For assistance in the future, please make sure to contact us here: 
           <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/support" style="color:#1155cc;">https://www.oldrobloxcorp.com/support</a>
         </p>
-
-        <p>We appreciate your patience and will be responding to you soon.</p>
-
+        
         <p>Sincerely,<br>
         Announcement Team<br>
         OldrobloxCorp</p>
 
         <!-- Footer Logo -->
-        <div style="text-align:center; margin-top:30px;">
+        <div margin-top:30px;">
           <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="OldrobloxCorp" style="height:35px;">
         </div>
       </div>
