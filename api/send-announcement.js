@@ -49,8 +49,8 @@ export default async function handler(req, res) {
       <div style="max-width:700px; margin:auto; background:#fff; border-radius:8px; padding:40px; color:#333; line-height:1.6;">
         
         <!-- Logo -->
-        <a href="https://oldrobloxcorpdataconsole.work.gd" target="_blank">
-            <img src="https://oldrobloxcorpdataconsole.work.gd/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+        <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/" target="_blank">
+            <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
         </a>
 
         <!-- Message Body -->
@@ -59,7 +59,7 @@ export default async function handler(req, res) {
         <p>${message.replace(/\n/g, "<br>")}</p>
 
         <p>For assistance in the future, please make sure to contact us here: 
-          <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/support" style="color:#1155cc;">https://www.oldrobloxcorp.com/support</a>
+          <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/support" style="color:#1155cc;">support team</a>
         </p>
         
         <p>Sincerely,<br>
@@ -67,9 +67,9 @@ export default async function handler(req, res) {
         OldrobloxCorp</p>
 
         <!-- Footer Logo -->
-        <div margin-top:30px;">
-          <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="OldrobloxCorp" style="height:35px;">
-        </div>
+        <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/" target="_blank">
+            <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+          </a>
       </div>
     </div>`
     });
