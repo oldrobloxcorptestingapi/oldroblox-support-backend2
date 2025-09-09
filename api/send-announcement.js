@@ -68,7 +68,7 @@ export default async function handler(req, res) {
 
         <!-- Footer Logo -->
         <a href="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/" target="_blank">
-            <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+            <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="Oldroblox Logo" style="max-width:140px;">
           </a>
       </div>
     </div>`
