@@ -63,7 +63,7 @@ export default async function handler(req, res) {
         </p>
         
         <p>Sincerely,<br>
-        Announcement Team<br>
+        The Oldroblox Team<br>
         OldrobloxCorp</p>
 
         <!-- Footer Logo -->
