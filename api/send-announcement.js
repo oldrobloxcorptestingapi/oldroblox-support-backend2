@@ -49,9 +49,9 @@ export default async function handler(req, res) {
       <div style="max-width:700px; margin:auto; background:#fff; border-radius:8px; padding:40px; color:#333; line-height:1.6;">
         
         <!-- Logo -->
-        <div margin-bottom:20px;">
-          <img src="https://oldrobloxcorpdatabaseplusxr-14932265.codehs.me/oldroblox.png" alt="OldrobloxCorp" style="height:40px;">
-        </div>
+        <a href="https://oldrobloxcorpdataconsole.work.gd" target="_blank">
+            <img src="https://oldrobloxcorpdataconsole.work.gd/oldroblox.png" alt="Oldroblox Logo" style="max-width:190px;">
+        </a>
 
         <!-- Message Body -->
         <p>Hi there,</p>
